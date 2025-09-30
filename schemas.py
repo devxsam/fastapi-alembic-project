@@ -11,9 +11,16 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     pass
 
+class UserUpdate(BaseModel):
+    name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    phone_number: Optional[str] = None
+    address: Optional[str] = None
+
 class User(UserBase):
     id: int
     created_at: datetime
     
     class Config:
-        orm_mode = True
+
+        orm_mode = True # Required for SQLAlchemy models to Pydantic
