@@ -10,8 +10,8 @@ This project demonstrates building a RESTful API using **FastAPI** with **Postgr
   - `POST /users` → Create a new user
   - `GET /users` → List all users
   - `GET /users/{id}` → Retrieve a single user
-  - (Optional Bonus) `PUT /users/{id}` → Update user details
-  - (Optional Bonus) `DELETE /users/{id}` → Delete a user
+  - `PUT /users/{id}` → Update user details
+  - `DELETE /users/{id}` → Delete a user
 
 - **Database Versioning with Alembic**
   - Version 1: Create `users` table
@@ -19,7 +19,12 @@ This project demonstrates building a RESTful API using **FastAPI** with **Postgr
 
 - **Security**
   - Sensitive info managed via `.env` file
-
+  - Create a `.env` file in the root directory:
+    
+    ```bash
+    DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost/fastapi_db
+    ```
+    
 ---
 
 ## Tech Stack
@@ -32,7 +37,7 @@ This project demonstrates building a RESTful API using **FastAPI** with **Postgr
 - **Python 3.12+** – Project language
 
 ---
-```bash
+```
 
 fastapi-alembic-project/
 │
@@ -56,7 +61,7 @@ fastapi-alembic-project/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/fastapi-alembic-project.git
+git clone https://github.com/devxsam/fastapi-alembic-project.git
 cd fastapi-alembic-project
 ```
 
@@ -83,6 +88,6 @@ uvicorn app.main:app --reload
 ```
 
 6. Test the API
-```bash
+
 Open Swagger UI: http://127.0.0.1:8000/docs
-```
+
